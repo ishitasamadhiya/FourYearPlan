@@ -6,92 +6,274 @@
   <title>My Four-Year College Plan</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f9fc;
+      font-family: 'Poppins', sans-serif;
+      background-color: #e6f0fa;
       margin: 0;
-      padding: 0;
+      display: flex;
     }
     header {
-      background-color: #3b82f6;
+      background-color: #a7c7e7;
       color: white;
       padding: 20px;
       text-align: center;
+      font-size: 1.8em;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 200px;
+      right: 0;
+      z-index: 1000;
+    }
+    .sidebar {
+      background-color: #dbe9f6;
+      width: 200px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 80px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    .sidebar a {
+      display: block;
+      padding: 15px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #b8d3ec;
     }
     .container {
+      margin-left: 220px;
+      margin-top: 100px;
       padding: 20px;
+      width: calc(100% - 220px);
     }
     details {
       background: white;
       padding: 15px;
       margin-bottom: 10px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    details[open] {
+      transform: scale(1.02);
     }
     summary {
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1.3em;
       outline: none;
+      cursor: pointer;
     }
-    ul {
+    table {
+      width: 100%;
+      border-collapse: collapse;
       margin-top: 10px;
     }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #b8d3ec;
+    }
+    td {
+      background-color: #ffffff;
+      cursor: pointer;
+    }
     footer {
-      background-color: #3b82f6;
+      background-color: #a7c7e7;
       color: white;
       text-align: center;
       padding: 10px;
       position: fixed;
       width: 100%;
       bottom: 0;
+      left: 200px;
+    }
+    .export-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .export-button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
 
+<div class="sidebar">
+  <a href="#first-year">First Year</a>
+  <a href="#second-year">Second Year</a>
+  <a href="#third-year">Third Year</a>
+  <a href="#fourth-year">Fourth Year</a>
+</div>
+
 <header>
-  <h1>My Four-Year College Plan</h1>
+  My Four-Year College Plan
 </header>
 
 <div class="container">
 
-  <details>
+  <details id="first-year">
     <summary>First Year</summary>
-    <ul>
-      <li><strong>Fall:</strong> COMPSCI 61A, MATH 1A, M.E.T. Intro Topics, Natural Science Elective, UGBA 10X</li>
-      <li><strong>Spring:</strong> COMPSCI 61B, MATH 1B, EECS 16A, Reading & Composition Part A, ECON 1</li>
-    </ul>
+    <h3>Fall</h3>
+    <table>
+      <tr><th>Name</th><th>Description</th><th>Units</th><th>Instructors</th></tr>
+      <tr><td ondblclick="editCell(this)">COMPSCI 61A</td><td ondblclick="editCell(this)">Intro to Programming</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">MATH 1A</td><td ondblclick="editCell(this)">Calculus I</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">M.E.T. Intro Topics</td><td ondblclick="editCell(this)">Special Topics</td><td ondblclick="editCell(this)">2</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">Natural Science Elective</td><td ondblclick="editCell(this)">Physics/Chem/Bio options</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">UGBA 10X</td><td ondblclick="editCell(this)">Business Basics</td><td ondblclick="editCell(this)">3</td><td ondblclick="editCell(this)"></td></tr>
+    </table>
+
+    <h3>Spring</h3>
+    <table>
+      <tr><th>Name</th><th>Description</th><th>Units</th><th>Instructors</th></tr>
+      <tr><td ondblclick="editCell(this)">COMPSCI 61B</td><td ondblclick="editCell(this)">Data Structures</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">MATH 1B</td><td ondblclick="editCell(this)">Calculus II</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">EECS 16A</td><td ondblclick="editCell(this)">Designing Information Devices I</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">Reading & Composition A</td><td ondblclick="editCell(this)"></td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">ECON 1</td><td ondblclick="editCell(this)">Intro to Economics</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    </table>
   </details>
 
-  <details>
+  <details id="second-year">
     <summary>Second Year</summary>
-    <ul>
-      <li><strong>Fall:</strong> MATH 53, EECS 16B, PHYSICS 7A/5A + 5AL, Breadth (Historical Studies/AC), Reading & Composition Part B</li>
-      <li><strong>Spring:</strong> COMPSCI 61C, COMPSCI 70, PHYSICS 7B/5B + 5BL, Breadth (Arts & Literature/AC), Statistics</li>
-    </ul>
+    <h3>Fall</h3>
+    <table>
+      <tr><th>Name</th><th>Description</th><th>Units</th><th>Instructors</th></tr>
+      <tr><td ondblclick="editCell(this)">MATH 53</td><td ondblclick="editCell(this)">Multivariable Calculus</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">EECS 16B</td><td ondblclick="editCell(this)">Designing Information Devices II</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">PHYSICS 7A</td><td ondblclick="editCell(this)">Mechanics & Waves</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">Breadth: Historical Studies</td><td ondblclick="editCell(this)"></td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">Reading & Composition B</td><td ondblclick="editCell(this)"></td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    </table>
+
+    <h3>Spring</h3>
+    <table>
+      <tr><th>Name</th><th>Description</th><th>Units</th><th>Instructors</th></tr>
+      <tr><td ondblclick="editCell(this)">COMPSCI 61C</td><td ondblclick="editCell(this)">Machine Structures</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">COMPSCI 70</td><td ondblclick="editCell(this)">Discrete Math & Probability Theory</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">PHYSICS 7B</td><td ondblclick="editCell(this)">Electricity & Magnetism</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">Breadth: Arts & Literature</td><td ondblclick="editCell(this)"></td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+      <tr><td ondblclick="editCell(this)">Statistics Requirement</td><td ondblclick="editCell(this)">Probability/Statistics</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    </table>
   </details>
 
-  <details>
-    <summary>Third Year</summary>
-    <ul>
-      <li><strong>Fall:</strong> Technical Electives, Upper Division EECS, UGBA 100, UGBA 101A, M.E.T. Capstone</li>
-      <li><strong>Spring:</strong> Upper Division EECS, UGBA 101B, UGBA 102A, UGBA 107 (Breadth: Philosophy and Values)</li>
-    </ul>
-  </details>
+  <!-- More to come: Third and Fourth Year tables will be filled next -->
+   <!-- Existing code preserved up to Second Year -->
 
-  <details>
-    <summary>Fourth Year</summary>
-    <ul>
-      <li><strong>Fall:</strong> Upper Division EECS, UGBA 103, UGBA 105, UGBA Elective, UGBA 104</li>
-      <li><strong>Spring:</strong> UGBA 106, UGBA 102B, UGBA Elective, Breadth (International Studies), Engineering Ethics</li>
-    </ul>
-  </details>
+<details id="third-year">
+  <summary>Third Year</summary>
+  <h3>Fall</h3>
+  <table>
+    <tr><th>Name</th><th>Description</th><th>Units</th><th>Instructors</th></tr>
+    <tr><td ondblclick="editCell(this)">Technical Elective</td><td ondblclick="editCell(this)">Advanced Technical Course</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">Upper Division EECS</td><td ondblclick="editCell(this)">EECS Core Course</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA 100</td><td ondblclick="editCell(this)">Business Communication</td><td ondblclick="editCell(this)">2</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA 101A</td><td ondblclick="editCell(this)">Microeconomic Analysis</td><td ondblclick="editCell(this)">3</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">M.E.T. Capstone</td><td ondblclick="editCell(this)">Capstone Project</td><td ondblclick="editCell(this)">2</td><td ondblclick="editCell(this)"></td></tr>
+  </table>
+
+  <h3>Spring</h3>
+  <table>
+    <tr><th>Name</th><th>Description</th><th>Units</th><th>Instructors</th></tr>
+    <tr><td ondblclick="editCell(this)">Upper Division EECS</td><td ondblclick="editCell(this)">Advanced EECS Course</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">Upper Division EECS</td><td ondblclick="editCell(this)">Advanced EECS Course</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA 101B</td><td ondblclick="editCell(this)">Macroeconomic Analysis</td><td ondblclick="editCell(this)">3</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA 102A</td><td ondblclick="editCell(this)">Financial Accounting</td><td ondblclick="editCell(this)">3</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA 107</td><td ondblclick="editCell(this)">Ethics & Responsibility</td><td ondblclick="editCell(this)">3</td><td ondblclick="editCell(this)"></td></tr>
+  </table>
+</details>
+
+<details id="fourth-year">
+  <summary>Fourth Year</summary>
+  <h3>Fall</h3>
+  <table>
+    <tr><th>Name</th><th>Description</th><th>Units</th><th>Instructors</th></tr>
+    <tr><td ondblclick="editCell(this)">Upper Division EECS</td><td ondblclick="editCell(this)">Specialized EECS Course</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">Upper Division EECS</td><td ondblclick="editCell(this)">Specialized EECS Course</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA 103</td><td ondblclick="editCell(this)">Finance</td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA 105</td><td ondblclick="editCell(this)">Organizational Behavior</td><td ondblclick="editCell(this)">3</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA Elective</td><td ondblclick="editCell(this)">Business Elective</td><td ondblclick="editCell(this)">2</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA 104</td><td ondblclick="editCell(this)">Business Law</td><td ondblclick="editCell(this)">3</td><td ondblclick="editCell(this)"></td></tr>
+  </table>
+
+  <h3>Spring</h3>
+  <table>
+    <tr><th>Name</th><th>Description</th><th>Units</th><th>Instructors</th></tr>
+    <tr><td ondblclick="editCell(this)">UGBA 106</td><td ondblclick="editCell(this)">Marketing</td><td ondblclick="editCell(this)">3</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA 102B</td><td ondblclick="editCell(this)">Managerial Accounting</td><td ondblclick="editCell(this)">3</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">UGBA Elective</td><td ondblclick="editCell(this)">Advanced Business Elective</td><td ondblclick="editCell(this)">2</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">Breadth: International Studies</td><td ondblclick="editCell(this)"></td><td ondblclick="editCell(this)">4</td><td ondblclick="editCell(this)"></td></tr>
+    <tr><td ondblclick="editCell(this)">Engineering Ethics</td><td ondblclick="editCell(this)">Professional Ethics</td><td ondblclick="editCell(this)">1-4</td><td ondblclick="editCell(this)"></td></tr>
+  </table>
+</details>
+
+<!-- Button to Export -->
+<button class="export-button" onclick="exportTableToCSV('four_year_plan.csv')">Export as CSV</button>
+
+
+  <button class="export-button" onclick="exportTableToCSV('four_year_plan.csv')">Export as CSV</button>
 
 </div>
 
 <footer>
   Made with ❤️ for my future!
 </footer>
+
+<script>
+function editCell(td) {
+  const oldText = td.innerText;
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.value = oldText;
+  input.style.width = '100%';
+  td.innerHTML = '';
+  td.appendChild(input);
+  input.focus();
+  input.addEventListener('blur', function() {
+    td.innerHTML = input.value;
+    td.setAttribute('ondblclick', 'editCell(this)');
+  });
+}
+
+function downloadCSV(csv, filename) {
+  const csvFile = new Blob([csv], { type: 'text/csv' });
+  const downloadLink = document.createElement('a');
+  downloadLink.download = filename;
+  downloadLink.href = window.URL.createObjectURL(csvFile);
+  downloadLink.style.display = 'none';
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+}
+
+function exportTableToCSV(filename) {
+  const rows = document.querySelectorAll('table tr');
+  let csv = [];
+
+  for (let row of rows) {
+    const cols = row.querySelectorAll('th, td');
+    let rowData = [];
+    for (let col of cols) {
+      rowData.push(col.innerText.replace(/,/g, ''));
+    }
+    csv.push(rowData.join(","));
+  }
+
+  downloadCSV(csv.join("\n"), filename);
+}
+</script>
 
 </body>
 </html>
